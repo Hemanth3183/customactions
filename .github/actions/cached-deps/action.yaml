@@ -1,12 +1,12 @@
 name: Get & Cache dependencies
 description: "Get the dependencies (via npm) and cache them"
+inputs:
+  caching:
+    description: "Choose to run the caching or not"
+    required: false
+    default: 'true'
 runs:
   using: 'composite'
-  inputs:
-    caching:
-      description: "Choose to run the caching or not"
-      required: false
-      default: 'true'
   steps:
     - name: Cache dependencies
       id: cache
