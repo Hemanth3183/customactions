@@ -9,7 +9,7 @@ function message() {
   // core.notice ("Hello from my custom javascript action!");
 
   const s3Uri = `s3://${bucket}`;
-  core.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
+  exec.exec(`aws s3 sync ${distFolder} ${s3Uri} --region ${bucketRegion}`);
 }
 
 message ();
