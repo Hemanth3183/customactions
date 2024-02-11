@@ -1,5 +1,13 @@
 name: Deploy using javascript custom actions
 description: "Custom javascript action to upload artifacts to s3 bucket"
+inputs:
+  bucket:
+    required: true
+  bucket-region:
+    required: false
+    default: 'ap-southeast-1'
+  dist-folder:
+    required: true
 runs:
   using: 'node20'
   main: 'main.js'

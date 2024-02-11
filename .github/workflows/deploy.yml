@@ -64,11 +64,19 @@ jobs:
       - name: Output contents
         run: ls
       - name: Deploy site
-        run: echo "Deploying..."
-  Javascript:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Print sentence to the console
+        id: deploy-to-s3
+        env:
+          AWS_ACCESS_KEY_ID: AKIAWW5U7Q5IXFSEGSXP
+          AWS_SECRET_ACCESS_KEY: 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
         uses: ./.github/actions/deploy-s3-javascript
+        with:
+          bucket: hemibucket
+          bucket-region: ap-southeast-1
+          dist-folder: ./dist
+  # Javascript:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v4
+  #     - name: Print sentence to the console
+  #       uses: ./.github/actions/deploy-s3-javascript
