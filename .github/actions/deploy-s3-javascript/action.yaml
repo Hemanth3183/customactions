@@ -1,0 +1,7 @@
+name: Deploy using javascript custom actions
+description: "Custom javascript action to upload artifacts to s3 bucket"
+runs:
+  using: 'node20'
+  pre: '' 
+  main: 'main.js'
+  post: ''
